@@ -9,8 +9,16 @@ sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    // add JDA
+    compile 'net.dv8tion:JDA:3.1.7_393'
+
+    // add JDA Utils
+    compile 'com.jagrosh:jda-utilities:2.1.3'
+
 }
