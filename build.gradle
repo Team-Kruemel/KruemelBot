@@ -23,4 +23,7 @@ dependencies {
     // add JDA Utils
     compile 'com.jagrosh:jda-utilities:2.1.3'
 
+    // add GSON
+    compile 'com.google.code.gson:gson:2.8.5'
+
 }
