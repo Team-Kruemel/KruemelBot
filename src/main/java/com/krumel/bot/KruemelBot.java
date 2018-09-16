@@ -20,7 +20,7 @@ public class KruemelBot {
         public void SetupBot()
         throws LoginException, RateLimitedException, InterruptedException{
 
-
+            ConfigManager.setDefaultSettings();
 
         }
 

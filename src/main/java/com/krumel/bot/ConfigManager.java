@@ -11,12 +11,13 @@ public class ConfigManager {
      * And set the filename as a String
      */
 
-    private Properties prop = new Properties();
+    @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
+    private final Properties prop = new Properties();
     private OutputStream out = null;
     private InputStream in = null;
-    private String filename = "config.properties";
+    private final String filename = "config.properties";
 
-    private boolean checkIfFileExists() {
+    private static boolean checkIfFileExists() {
 
         try {
 
@@ -46,9 +47,9 @@ public class ConfigManager {
 
     }
 
-    private void setDefaultSettings() {
+    public static void setDefaultSettings() {
 
-        if (checkIfFileExists()==false) {
+        if (!checkIfFileExists()) {
 
             try {
 
