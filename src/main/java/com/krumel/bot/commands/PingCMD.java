@@ -7,15 +7,12 @@
         import com.jagrosh.jdautilities.doc.standard.CommandInfo;
         import com.jagrosh.jdautilities.examples.doc.Author;
 
-/**
- *
- * @author John Grosh (jagrosh)
- */
+
 @CommandInfo(
         name = {"Ping", "Pong"},
         description = "Checks the bot's latency"
 )
-@Author("John Grosh (jagrosh)")
+@Author("Heinz")
 public class PingCMD extends Command {
 
     public PingCMD()
