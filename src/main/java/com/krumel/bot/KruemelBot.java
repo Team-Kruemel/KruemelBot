@@ -15,7 +15,7 @@ public class KruemelBot {
 
     }
 
-    private class BotSetup implements EventListener {
+    public class BotSetup implements EventListener {
 
         public void SetupBot()
         throws LoginException, RateLimitedException, InterruptedException{

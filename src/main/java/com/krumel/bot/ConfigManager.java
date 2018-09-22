@@ -12,12 +12,12 @@ public class ConfigManager {
      */
 
     @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
-    private final Properties prop = new Properties();
-    private OutputStream out = null;
-    private InputStream in = null;
-    private final String filename = "config.properties";
+    private static final Properties prop = new Properties();
+    private static OutputStream out = null;
+    private static InputStream in = null;
+    private static final String filename = "config.properties";
 
-    public boolean checkIfFileExists() {
+    public static boolean checkIfFileExists() {
 
         try {
 
@@ -47,7 +47,7 @@ public class ConfigManager {
 
     }
 
-    public void setDefaultSettings() {
+    public static void setDefaultSettings() {
 
         if (!checkIfFileExists()) {
 
