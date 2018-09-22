@@ -17,7 +17,7 @@ public class ConfigManager {
     private InputStream in = null;
     private final String filename = "config.properties";
 
-    private static boolean checkIfFileExists() {
+    public boolean checkIfFileExists() {
 
         try {
 
@@ -47,7 +47,7 @@ public class ConfigManager {
 
     }
 
-    public static void setDefaultSettings() {
+    public void setDefaultSettings() {
 
         if (!checkIfFileExists()) {
 
