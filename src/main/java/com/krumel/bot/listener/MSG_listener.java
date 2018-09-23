@@ -17,13 +17,22 @@ public class MSG_listener extends ListenerAdapter {
 
     @Override
     public void onMessageReceived(MessageReceivedEvent event) {
-        User author =event.getAuthor();
+        User author = event.getAuthor();
         Message message  = event.getMessage();
         MessageChannel channel =event.getChannel();
         String Smsg = message.getContentDisplay();
+        String SGuild = message.getGuild().toString();
+        String url = "jdbc:mysql://localhost:3306/javabase";
+        String username = "java";
+        String password = "password";
+
+        System.out.println("Connecting database...");
+
+        // init connection object
+        private Connection connection;
+// init properties object
+     MYSQL.
 
 
 
-    }
-    if (msg.equals("!block"))
 }

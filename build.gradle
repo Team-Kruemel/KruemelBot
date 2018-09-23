@@ -16,7 +16,7 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
-
+    compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.13'
     // add JDA
     compile 'net.dv8tion:JDA:3.7.1_393'
 
