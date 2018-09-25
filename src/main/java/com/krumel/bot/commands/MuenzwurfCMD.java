@@ -1,4 +1,4 @@
 package com.krumel.bot.commands;
 
-public class MünzwurfCMD {
+public class MuenzwurfCMD {
 }

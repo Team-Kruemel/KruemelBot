@@ -3,24 +3,18 @@ package com.krumel.bot;
 import com.jagrosh.jdautilities.command.Command;
 import com.jagrosh.jdautilities.command.CommandClientBuilder;
 import com.jagrosh.jdautilities.commons.waiter.EventWaiter;
-import com.krumel.bot.commands.CoinflipCMD;
-import com.krumel.bot.commands.DdosCMD;
-import com.krumel.bot.commands.PingCMD;
 import jdk.internal.jline.internal.Log;
 import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.EmbedBuilder;
 import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.JDABuilder;
 import net.dv8tion.jda.core.entities.Game;
-import net.dv8tion.jda.core.entities.User;
 import net.dv8tion.jda.core.events.Event;
 import net.dv8tion.jda.core.events.ReadyEvent;
 import net.dv8tion.jda.core.exceptions.RateLimitedException;
 import net.dv8tion.jda.core.hooks.EventListener;
 
 import javax.security.auth.login.LoginException;
-import java.sql.Statement;
-import java.util.List;
 
 /*
  *
