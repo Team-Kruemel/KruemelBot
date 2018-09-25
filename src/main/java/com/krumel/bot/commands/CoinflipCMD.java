@@ -10,18 +10,18 @@ import java.util.Random;
 public class CoinflipCMD {
 
     @CommandInfo(
-            name = {"Ddos", "ddos"},
-            description = "start ddos!"
+            name = {"coinflip", "coinflip"},
+            description = "start coinflip!"
     )
     @Author("Heinz")
     public class PingCMD extends Command {
 
         public PingCMD()
         {
-            this.name = "ddos";
-            this.help = "start ddos!";
+            this.name = "coinflip";
+            this.help = "start coinflip!";
             this.guildOnly = false;
-            this.aliases = new String[]{"ddos"};
+            this.aliases = new String[]{"coinflip"};
         }
 
         @Override
