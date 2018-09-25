@@ -36,6 +36,6 @@ public class MSG_listener{
             sqle.printStackTrace();
         }
 
-    } // ende: public static void main()
+    } // ende: public static void main(
 
     }
