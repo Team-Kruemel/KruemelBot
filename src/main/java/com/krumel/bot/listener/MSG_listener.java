@@ -1,48 +1,41 @@
 package com.krumel.bot.listener;
 
-import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.ConnectionProperties;
-import net.dv8tion.jda.client.entities.Group;
-import net.dv8tion.jda.core.JDA;
-import net.dv8tion.jda.core.JDABuilder;
-import net.dv8tion.jda.core.Permission;
-import net.dv8tion.jda.core.entities.*;
-import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
-import net.dv8tion.jda.core.exceptions.PermissionException;
-import net.dv8tion.jda.core.exceptions.RateLimitedException;
-import net.dv8tion.jda.core.hooks.ListenerAdapter;
-import com.mysql.*;
-import javax.security.auth.login.LoginException;
-
-public class MSG_listener extends ListenerAdapter {
 
 
-    @Override
-    public void onMessageReceived(MessageReceivedEvent event) {
-        User author = event.getAuthor();
-        Message message = event.getMessage();
-        MessageChannel channel = event.getChannel();
-        String Smsg = message.getContentDisplay();
-        String SGuild = message.getGuild().toString();
-        String url = "jdbc:mysql://localhost:3306/javabase";
-        String username = "java";
-        String password = "password";
+import java.sql.*;
 
-        System.out.println("Connecting database...");
+public class MSG_listener{
+    public static void main (String [] args ) throws ClassNotFoundException, SQLException {
+        Class.forName("com.mysql.jdbc.Driver");
+       final String hostname = "www.heinz-lukas.de";
+       final String user = "discord";
+       final String dbname = "discord";
+       final String password = "2FR12§!3=f";
+       final String port = "3306";
+        Connection conn = null;
+        try {
+            System.out.println("* Treiber laden");
+            Class.forName("org.gjt.mm.mysql.Driver").newInstance();
+        }
+        catch (Exception e) {
+            System.err.println("Unable to load driver.");
+            e.printStackTrace();
+        }
+        try {
+            System.out.println("* Verbindung aufbauen");
+            String url = "jdbc:mysql://"+hostname+":"+port+"/"+dbname;
+            conn = DriverManager.getConnection(url, user, password);
 
-        // init connection object
-        // init connection object
-         Connection connection;
-// init properties object
-        ConnectionProperties properties;
-
-            if (properties == null) {
-                properties = new Properties();
-                properties.setProperty("user", USERNAME);
-                properties.setProperty("password", PASSWORD);
-                properties.setProperty("MaxPooledStatements", MAX_POOL);
-            }
-            return properties;
+            System.out.println("* Datenbank-Verbindung beenden");
+            conn.close();
+        }
+        catch (SQLException sqle) {
+            System.out.println("SQLException: " + sqle.getMessage());
+            System.out.println("SQLState: " + sqle.getSQLState());
+            System.out.println("VendorError: " + sqle.getErrorCode());
+            sqle.printStackTrace();
         }
 
-    }}
+    } // ende: public static void main()
+
+    }
