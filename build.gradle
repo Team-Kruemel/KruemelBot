@@ -20,10 +20,10 @@ dependencies {
     compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.6'
 
     // add JDA
-    compile 'net.dv8tion:JDA:3.7.1_393'
+    compile 'net.dv8tion:JDA:3.8.0_428'
 
     // add JDA Utils
-    compile 'com.jagrosh:jda-utilities:2.1.3'
+    compile 'com.jagrosh:jda-utilities:2.1.4'
 
     // add GSON
     compile 'com.google.code.gson:gson:2.8.5'

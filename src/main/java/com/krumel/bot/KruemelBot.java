@@ -3,6 +3,8 @@ package com.krumel.bot;
 import com.jagrosh.jdautilities.command.Command;
 import com.jagrosh.jdautilities.command.CommandClientBuilder;
 import com.jagrosh.jdautilities.commons.waiter.EventWaiter;
+import com.krumel.bot.commands.CoinflipCMD;
+import com.krumel.bot.commands.PingCMD;
 import jdk.internal.jline.internal.Log;
 import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.EmbedBuilder;
@@ -72,6 +74,8 @@ public class KruemelBot {
             client.setOwnerId(ConfigManager.prop.getProperty("owner_id"));
             client.setEmojis("\uD83D\uDE03", "\uD83D\uDE2E", "\uD83D\uDE26");
             client.setPrefix(ConfigManager.prop.getProperty("cmd_prefix"));
+            client.addCommands(new CoinflipCMD(),
+                                new PingCMD());
 
             //Register the Commands
 
