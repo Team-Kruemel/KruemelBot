@@ -6,7 +6,6 @@ import com.jagrosh.jdautilities.commons.waiter.EventWaiter;
 import com.krumel.bot.commands.CoinflipCMD;
 import com.krumel.bot.commands.DdosCMD;
 import com.krumel.bot.commands.PingCMD;
-import jdk.internal.jline.internal.Log;
 import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.EmbedBuilder;
 import net.dv8tion.jda.core.JDA;
@@ -18,6 +17,8 @@ import net.dv8tion.jda.core.exceptions.RateLimitedException;
 import net.dv8tion.jda.core.hooks.EventListener;
 
 import javax.security.auth.login.LoginException;
+import java.io.FileInputStream;
+import java.io.IOException;
 
 /*
  *
@@ -35,12 +36,41 @@ import javax.security.auth.login.LoginException;
  */
 
 
-public class KruemelBot {
+public class KruemelBot extends ConfigManager {
+
+    private static String filename = "config.properties";
 
     public static void main(String[] args) {
 
-        // Call ConfigManager.setDefaultSettings to check if the Config already exits if no it will set up a default config
-        ConfigManager.setDefaultSettings();
+        try {
+
+            // Create new FileInputStream
+            in = new FileInputStream(filename);
+
+            // Check if file exists
+            if(in==null) {
+
+                setDefaultSettings();
+
+            }
+
+        } catch (IOException ioexc) {
+
+            ioexc.printStackTrace();
+
+        }
+
+        // Try to load the properties file
+        try {
+
+           prop.load(in);
+
+        } catch (IOException ioexc2) {
+
+            ioexc2.printStackTrace();
+            System.exit(1);
+
+        }
 
         // Call BotSetup.SetupBot to start the Bot
         try {
@@ -108,7 +138,7 @@ public class KruemelBot {
             if (event instanceof ReadyEvent) {
 
                 // Print to the Log that the API is ready
-                Log.info(SAPI_READY);
+                System.out.println(SAPI_READY);
 
                 //Print a welcome message to the Dev Channel
                 eb.setAuthor(jda.getSelfUser().getAsMention(), BOT_URL, BOT_ICON);

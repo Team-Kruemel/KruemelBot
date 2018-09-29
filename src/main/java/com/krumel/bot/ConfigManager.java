@@ -27,45 +27,12 @@ public class ConfigManager {
      * And set the filename as a String
      */
 
-    @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
     public static final Properties prop = new Properties();
-    private static OutputStream out = null;
-    private static InputStream in = null;
+    public static OutputStream out = null;
+    public static InputStream in = null;
     private static final String filename = "config.properties";
 
-    public static boolean checkIfFileExists() {
-
-        try {
-
-            in = new FileInputStream(filename);
-
-        } catch (IOException ioExc) {
-
-            ioExc.printStackTrace();
-
-        } finally {
-
-            try {
-
-                in.close();
-
-            } catch (IOException ioExc4) {
-
-                ioExc4.printStackTrace();
-
-            }
-
-        }
-
-        if (in==null)
-            return false;
-        else return true;
-
-    }
-
     public static void setDefaultSettings() {
-
-        if (!checkIfFileExists()) {
 
             try {
 
@@ -76,6 +43,9 @@ public class ConfigManager {
                 prop.setProperty("discord_token", "Set your Discord Token here");
                 prop.setProperty("cmd_prefix", "Set your command prefix here");
                 prop.setProperty("owner_id", "Set the ID of the bot owner here. Only one Owner may be set here.");
+
+                // Store the properties in the file
+                prop.store(out, null);
 
                 System.out.println("The default settings have now been set the bot will now exit.");
 
@@ -106,7 +76,3 @@ public class ConfigManager {
         }
 
     }
-
-
-
-}
