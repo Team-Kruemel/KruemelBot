@@ -6,7 +6,19 @@
         import com.jagrosh.jdautilities.command.CommandEvent;
         import com.jagrosh.jdautilities.doc.standard.CommandInfo;
         import com.jagrosh.jdautilities.examples.doc.Author;
-
+        /*
+         *
+         *
+         * Written by Lukas H. (ZickZackHD)
+         * 2018, July
+         *
+         *
+         */
+        /**
+         *
+         * @author Lukas H.
+         *
+         */
 
 @CommandInfo(
         name = {"Ping", "Pong"},

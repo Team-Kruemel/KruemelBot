@@ -4,9 +4,20 @@ import com.jagrosh.jdautilities.command.Command;
 import com.jagrosh.jdautilities.command.CommandEvent;
 import com.jagrosh.jdautilities.doc.standard.CommandInfo;
 import com.jagrosh.jdautilities.examples.doc.Author;
-
 import java.util.Random;
-
+/*
+ *
+ *
+ * Written by Lukas H. (ZickZackHD)
+ * 2018, July
+ *
+ *
+ */
+/**
+ *
+ * @author Lukas H.
+ *
+ */
 public class CoinflipCMD {
 
     @CommandInfo(
@@ -14,9 +25,9 @@ public class CoinflipCMD {
             description = "start coinflip!"
     )
     @Author("Heinz")
-    public class PingCMD extends Command {
+    public class CoinflipCOM extends Command {
 
-        public PingCMD()
+        public CoinflipCOM()
         {
             this.name = "coinflip";
             this.help = "start coinflip!";
