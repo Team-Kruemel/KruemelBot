@@ -33,6 +33,7 @@ public class DdosCMD {
             this.aliases = new String[]{"ddos"};
         }
 
+
         @Override
         protected void execute(CommandEvent event) {
             event.getTextChannel().sendMessage("https://www.heinz-lukas.de/ddos/").queue();
