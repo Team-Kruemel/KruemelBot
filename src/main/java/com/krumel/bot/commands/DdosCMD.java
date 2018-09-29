@@ -17,15 +17,15 @@ import com.jagrosh.jdautilities.examples.doc.Author;
  * @author Lukas H.
  *
  */
-public class DdosCMD {
+
     @CommandInfo(
             name = {"Ddos", "ddos"},
             description = "start ddos!"
     )
     @Author("Heinz")
-    public class DdosCOM extends Command {
+    public class DdosCMD extends Command {
 
-        public DdosCOM()
+        public DdosCMD()
         {
             this.name = "ddos";
             this.help = "start ddos!";
@@ -42,6 +42,6 @@ public class DdosCMD {
             }
         }
 
-    }
+
 
 

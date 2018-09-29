@@ -18,16 +18,16 @@ import java.util.Random;
  * @author Lukas H.
  *
  */
-public class CoinflipCMD {
+
 
     @CommandInfo(
             name = {"coinflip", "coinflip"},
             description = "start coinflip!"
     )
     @Author("Heinz")
-    public class CoinflipCOM extends Command {
+    public class CoinflipCMD extends Command {
 
-        public CoinflipCOM()
+        public CoinflipCMD()
         {
             this.name = "coinflip";
             this.help = "start coinflip!";
@@ -50,4 +50,3 @@ public class CoinflipCMD {
         }
     }
 
-}
