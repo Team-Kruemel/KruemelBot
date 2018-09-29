@@ -117,7 +117,7 @@ public class KruemelBot extends ConfigManager {
                     .addEventListener(waiter)
                     .addEventListener(client.build())
                     .addEventListener(new BotSetup())
-                    .buildBlocking();
+                    .build();
 
         }
 
