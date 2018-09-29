@@ -6,10 +6,12 @@ import com.jagrosh.jdautilities.commons.waiter.EventWaiter;
 import com.krumel.bot.commands.CoinflipCMD;
 import com.krumel.bot.commands.DdosCMD;
 import com.krumel.bot.commands.PingCMD;
+import com.krumel.bot.commands.ShutdownCMD;
 import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.EmbedBuilder;
 import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.JDABuilder;
+import net.dv8tion.jda.core.entities.Category;
 import net.dv8tion.jda.core.entities.Game;
 import net.dv8tion.jda.core.events.Event;
 import net.dv8tion.jda.core.events.ReadyEvent;
@@ -24,7 +26,7 @@ import java.io.IOException;
  *
  *
  * Written by Filip M. (InterXellar)
- * 2018, July
+ * 2018, September
  *
  *
  */
@@ -88,15 +90,10 @@ public class KruemelBot extends ConfigManager {
     public static class BotSetup implements EventListener {
 
         private final String SAPI_READY = "The API now ready for use!";
-        private final String SDEV_CHANNEL_ID = "467046869424406528";
-        private final String BOT_READY_MSG = "The Bot is now ready for usage";
-        private final String VER_INFO = "Version 0.1_debug (Unstable)";
-
+        public static Command.Category AdminCMDs = new Command.Category("Admin commands");
 
         public static void SetupBot()
         throws LoginException, RateLimitedException, InterruptedException{
-
-            Command.Category AdminCMDs = new Command.Category("Admin Commands");
 
             EventWaiter waiter = new EventWaiter();
             CommandClientBuilder client = new CommandClientBuilder();
@@ -111,10 +108,11 @@ public class KruemelBot extends ConfigManager {
             //Register the Commands
             client.addCommands(new CoinflipCMD(),
                                 new DdosCMD(),
-                                new PingCMD());
+                                new PingCMD(),
+                                new ShutdownCMD());
 
             JDA jda = new JDABuilder(AccountType.BOT)
-                    .setToken(ConfigManager.prop.getProperty("token"))
+                    .setToken(ConfigManager.prop.getProperty("discord_token"))
                     .setGame(Game.watching("loading..."))
                     .addEventListener(waiter)
                     .addEventListener(client.build())
@@ -129,11 +127,13 @@ public class KruemelBot extends ConfigManager {
             final JDA jda = event.getJDA();
             final EmbedBuilder eb = new EmbedBuilder();
             final String BOT_ICON = "https://cdn.discordapp.com/avatars/457972381911089154/bb389dfcc8ca15fcbc5512c2025aff04.png";
-            final String BOT_URL = "https://gitlab.com/InterXellar/JDB/";
+            final String BOT_URL = "https://github.com/Team-Kruemel/KruemelBot/";
             final String WELCOME_TITEL = "Welcome message";
             final String DESC = "The bot is now ready for usage!";
-            final String FOOTER_TEXT = "Requested by " + jda.getSelfUser().getAsMention();
-
+            final String FOOTER_TEXT = "Requested by ";
+            final String SDEV_CHANNEL_ID = "467046869424406528";
+            final String BOT_READY_MSG = "The Bot is now ready for usage";
+            final String VER_INFO = "Version 0.1_debug (Unstable)";
 
             if (event instanceof ReadyEvent) {
 
@@ -141,11 +141,11 @@ public class KruemelBot extends ConfigManager {
                 System.out.println(SAPI_READY);
 
                 //Print a welcome message to the Dev Channel
-                eb.setAuthor(jda.getSelfUser().getAsMention(), BOT_URL, BOT_ICON);
+                eb.setAuthor(jda.getSelfUser().getName(), BOT_URL, BOT_ICON);
                 eb.setTitle(WELCOME_TITEL);
                 eb.setDescription(DESC);
-                eb.setFooter(FOOTER_TEXT, jda.getSelfUser().getAvatarUrl());
-
+                eb.setFooter(FOOTER_TEXT + jda.getSelfUser().getName(), jda.getSelfUser().getAvatarUrl());
+                jda.getTextChannelById(SDEV_CHANNEL_ID).sendMessage(eb.build()).queue();
 
             }
 
