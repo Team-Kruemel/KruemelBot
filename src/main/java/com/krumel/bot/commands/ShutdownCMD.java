@@ -39,7 +39,7 @@ public class ShutdownCMD extends Command {
     @Override
     protected void execute(CommandEvent event) {
 
-        final String SBOT_URL = "https://gitlab.com/InterXellar/JDB/";
+        final String SBOT_URL = "https://github.com/Team-Kruemel/KruemelBot/";
         final String SSHUTDOWN_TITLE = "Shutdown command";
         final String SDESC = "The bot will now safely shutdown!";
         final String SNoPerm = "You don't have permission to use this command!";

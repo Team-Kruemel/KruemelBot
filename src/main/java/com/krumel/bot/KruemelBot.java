@@ -11,7 +11,6 @@ import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.EmbedBuilder;
 import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.JDABuilder;
-import net.dv8tion.jda.core.entities.Category;
 import net.dv8tion.jda.core.entities.Game;
 import net.dv8tion.jda.core.events.Event;
 import net.dv8tion.jda.core.events.ReadyEvent;
@@ -20,6 +19,7 @@ import net.dv8tion.jda.core.hooks.EventListener;
 
 import javax.security.auth.login.LoginException;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 /*
@@ -49,15 +49,15 @@ public class KruemelBot extends ConfigManager {
             // Create new FileInputStream
             in = new FileInputStream(filename);
 
-            // Check if file exists
-            if(in==null) {
+        } catch (FileNotFoundException FNFExc) {
 
-                setDefaultSettings();
-
-            }
+            // If the File does not exist create it with default settings
+            setDefaultSettings();
+            FNFExc.printStackTrace();
 
         } catch (IOException ioexc) {
 
+            setDefaultSettings();
             ioexc.printStackTrace();
 
         }
