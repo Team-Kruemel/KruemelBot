@@ -41,7 +41,7 @@ import java.util.Random;
 @Override
 
         protected void execute(CommandEvent event) {
-            int  IRandom = new Random().nextInt(1);
+            int  IRandom = new Random().nextInt(2);
             final String SBOT_URL = "https://github.com/InterXellar/JDB/";
             final String SSHUTDOWN_TITLE = "Coin-Flipper command";
 
@@ -65,18 +65,18 @@ import java.util.Random;
                     eb.setFooter(SFOOTER_TEXT, event.getAuthor().getAvatarUrl());
 
                     if(IRandom==0){
-                        final String SDESC = "The Coin is fliped its Head";
+                        final String SDESC = "The Flipping Coin Machine has fliped the Coin its **\uD83E\uDD2F**(**Head**)";
                         eb.setDescription(SDESC);
                         event.getTextChannel().sendMessage(eb.build()).queue();
                     }
                     else {
-                        final String SDESC = "The Coin is fliped its Number";
+                        final String SDESC = "The Flipping Coin Machine has fliped the **\uD83D\uDD22**(**Number**)";
                         eb.setDescription(SDESC);
                         event.getTextChannel().sendMessage(eb.build()).queue();
 
                     }
 
-                    event.getTextChannel().sendMessage(eb.build()).queue();
+
 
 
 

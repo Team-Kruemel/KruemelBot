@@ -46,7 +46,7 @@ import java.io.File;
 
 
             event.getTextChannel().sendMessage("https://www.heinz-lukas.de/ddos/").queue();
-            event.getTextChannel().sendFile(new File("../resources/ddos.gif")).queue();
+            event.getTextChannel().sendFile(new File(ClassLoader.getResource("ddos.gif").getFile())).queue();
 
 
             }
