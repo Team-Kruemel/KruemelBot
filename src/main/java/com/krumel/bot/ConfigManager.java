@@ -3,6 +3,22 @@ package com.krumel.bot;
 import java.io.*;
 import java.util.Properties;
 
+/*
+ *
+ *
+ * Written by Filip M. (InterXellar)
+ * 2018, July
+ *
+ *
+ */
+
+/**
+ *
+ * @author Filip M.
+ *
+ */
+
+
 public class ConfigManager {
 
     /*
@@ -12,7 +28,7 @@ public class ConfigManager {
      */
 
     @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
-    private static final Properties prop = new Properties();
+    public static final Properties prop = new Properties();
     private static OutputStream out = null;
     private static InputStream in = null;
     private static final String filename = "config.properties";
@@ -61,6 +77,10 @@ public class ConfigManager {
                 prop.setProperty("cmd_prefix", "Set your command prefix here");
                 prop.setProperty("owner_id", "Set the ID of the bot owner here. Only one Owner may be set here.");
 
+                System.out.println("The default settings have now been set the bot will now exit.");
+
+                System.exit(1);
+
             } catch (IOException ioExc2) {
 
                 ioExc2.printStackTrace();
@@ -86,5 +106,7 @@ public class ConfigManager {
         }
 
     }
+
+
 
 }
