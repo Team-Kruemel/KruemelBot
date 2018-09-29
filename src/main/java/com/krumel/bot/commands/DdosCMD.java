@@ -4,6 +4,9 @@ import com.jagrosh.jdautilities.command.Command;
 import com.jagrosh.jdautilities.command.CommandEvent;
 import com.jagrosh.jdautilities.doc.standard.CommandInfo;
 import com.jagrosh.jdautilities.examples.doc.Author;
+
+
+import java.io.File;
 /*
  *
  *
@@ -36,7 +39,15 @@ import com.jagrosh.jdautilities.examples.doc.Author;
 
         @Override
         protected void execute(CommandEvent event) {
+
+
+           ClassLoader ClassLoader = getClass().getClassLoader();
+
+
+
+
             event.getTextChannel().sendMessage("https://www.heinz-lukas.de/ddos/").queue();
+            event.getTextChannel().sendFile(new File("../resources/ddos.gif")).queue();
 
 
             }
