@@ -5,7 +5,7 @@ import com.jagrosh.jdautilities.command.CommandClientBuilder;
 import com.jagrosh.jdautilities.commons.waiter.EventWaiter;
 import com.krumel.bot.commands.*;
 import net.dv8tion.jda.core.AccountType;
-import net.dv8tion.jda.core.EmbedBuilder;
+/* import net.dv8tion.jda.core.EmbedBuilder;*/
 import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.JDABuilder;
 import net.dv8tion.jda.core.entities.Game;
@@ -125,6 +125,7 @@ public class KruemelBot extends ConfigManager {
         @Override
         public void onEvent(Event event) {
 
+            /*
             final JDA jda = event.getJDA();
             final EmbedBuilder eb = new EmbedBuilder();
             final String BOT_URL = "https://github.com/Team-Kruemel/KruemelBot/";
@@ -134,13 +135,14 @@ public class KruemelBot extends ConfigManager {
             final String SDEV_CHANNEL_ID = "467046869424406528";
             final String BOT_READY_MSG = "The Bot is now ready for usage";
             final String VER_INFO = "Version 0.1_debug (Unstable)";
-
+            */
             if (event instanceof ReadyEvent) {
 
                 // Print to the Log that the API is ready
                 System.out.println(SAPI_READY);
 
-                /*Print a welcome message to the Dev Channel
+                /*
+                Print a welcome message to the Dev Channel
                 eb.setAuthor(jda.getSelfUser().getName(), BOT_URL, jda.getSelfUser().getAvatarUrl());
                 eb.setTitle(WELCOME_TITEL);
                 eb.setDescription(DESC);
