@@ -4,6 +4,7 @@ import com.jagrosh.jdautilities.command.Command;
 import com.jagrosh.jdautilities.command.CommandEvent;
 import com.jagrosh.jdautilities.doc.standard.CommandInfo;
 import com.jagrosh.jdautilities.examples.doc.Author;
+import com.krumel.bot.KruemelBot;
 
 import java.io.File;
 /*
@@ -22,7 +23,7 @@ import java.io.File;
  */
 
     @CommandInfo(
-            name = {"Invite", "ddos"},
+            name = {"Invite", ""},
             description = "If you want to have this 'Krümelbot' you get here the Invitation-Link."
     )
     @Author("Heinz")
@@ -30,20 +31,16 @@ import java.io.File;
 
         public InviteCMD()
         {
-            this.name = "Invitation";
+
+            this.name = "join";
             this.help = "Invitation-Link";
             this.guildOnly = false;
+            this.category = KruemelBot.BotSetup.AdminCMDs;
             this.aliases = new String[]{"join"};
         }
 
-
         @Override
         protected void execute(CommandEvent event) {
-
-
-           ClassLoader ClassLoader = getClass().getClassLoader();
-
-
 
             event.getTextChannel().sendMessage("https://discordapp.com/oauth2/authorize?client_id=479025791565430799&scope=bot&permissions=8 ").queue();
 
