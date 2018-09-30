@@ -28,4 +28,6 @@ dependencies {
     // add GSON
     compile 'com.google.code.gson:gson:2.8.5'
 
+    compile 'club.minnced:java-discord-rpc:2.0.0'
+
 }

@@ -43,7 +43,7 @@ import java.util.Random;
         protected void execute(CommandEvent event) {
             int  IRandom = new Random().nextInt(2);
             final String SBOT_URL = "https://github.com/InterXellar/JDB/";
-            final String SSHUTDOWN_TITLE = "Coin-Flipper command";
+            final String SCoinflip_TITLE = "Coin-Flipper command";
 
             final String SNoPerm = "You don't have permission to use this command!";
             final String SFOOTER_TEXT = "Requested by " + event.getAuthor().getName();
@@ -59,7 +59,7 @@ import java.util.Random;
 
                     // Prepare Embed Message
                     eb.setAuthor(event.getSelfUser().getName(), SBOT_URL, event.getSelfUser().getAvatarUrl());
-                    eb.setTitle(SSHUTDOWN_TITLE);
+                    eb.setTitle(SCoinflip_TITLE);
 
 
                     eb.setFooter(SFOOTER_TEXT, event.getAuthor().getAvatarUrl());
@@ -84,7 +84,7 @@ import java.util.Random;
 
                             // prepare Embed Message
                             eb.setAuthor(event.getSelfUser().getName(), SBOT_URL, event.getSelfUser().getAvatarUrl());
-                            eb.setTitle(SSHUTDOWN_TITLE);
+                            eb.setTitle(SCoinflip_TITLE);
                             eb.setDescription(SNoPerm);
                             eb.setFooter(SFOOTER_TEXT, event.getAuthor().getAvatarUrl());
 

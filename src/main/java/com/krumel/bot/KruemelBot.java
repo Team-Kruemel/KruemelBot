@@ -3,10 +3,8 @@ package com.krumel.bot;
 import com.jagrosh.jdautilities.command.Command;
 import com.jagrosh.jdautilities.command.CommandClientBuilder;
 import com.jagrosh.jdautilities.commons.waiter.EventWaiter;
-import com.krumel.bot.commands.CoinflipCMD;
-import com.krumel.bot.commands.DdosCMD;
-import com.krumel.bot.commands.PingCMD;
-import com.krumel.bot.commands.ShutdownCMD;
+import com.krumel.bot.commands.*;
+import club.minnced.discord.rpc.*;
 import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.EmbedBuilder;
 import net.dv8tion.jda.core.JDA;
@@ -43,6 +41,8 @@ public class KruemelBot extends ConfigManager {
     private static String filename = "config.properties";
 
     public static void main(String[] args) {
+
+
 
         try {
 
@@ -110,6 +110,7 @@ public class KruemelBot extends ConfigManager {
                                 new DdosCMD(),
                                 new PingCMD(),
                                 new ShutdownCMD());
+                                new InviteCMD();
 
             JDA jda = new JDABuilder(AccountType.BOT)
                     .setToken(ConfigManager.prop.getProperty("discord_token"))
@@ -117,16 +118,21 @@ public class KruemelBot extends ConfigManager {
                     .addEventListener(waiter)
                     .addEventListener(client.build())
                     .addEventListener(new BotSetup())
+
                     .build();
 
+
+
+
         }
+
 
         @Override
         public void onEvent(Event event) {
 
             final JDA jda = event.getJDA();
             final EmbedBuilder eb = new EmbedBuilder();
-            final String BOT_ICON = "https://cdn.discordapp.com/avatars/457972381911089154/bb389dfcc8ca15fcbc5512c2025aff04.png";
+            final String BOT_ICON = "https://images-ext-2.discordapp.net/external/BqE8OJBxDhvmpIg1m0Zyw1I80IiKYq4f-f1DYZEvYcY/https/cdn.discordapp.com/avatars/479025791565430799/ee42db71c3d19b411b6191e652c57814.png";
             final String BOT_URL = "https://github.com/Team-Kruemel/KruemelBot/";
             final String WELCOME_TITEL = "Welcome message";
             final String DESC = "The bot is now ready for usage!";
@@ -144,6 +150,7 @@ public class KruemelBot extends ConfigManager {
                 eb.setAuthor(jda.getSelfUser().getName(), BOT_URL, BOT_ICON);
                 eb.setTitle(WELCOME_TITEL);
                 eb.setDescription(DESC);
+
                 eb.setFooter(FOOTER_TEXT + jda.getSelfUser().getName(), jda.getSelfUser().getAvatarUrl());
                 jda.getTextChannelById(SDEV_CHANNEL_ID).sendMessage(eb.build()).queue();
 
