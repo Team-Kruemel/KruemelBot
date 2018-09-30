@@ -151,7 +151,7 @@ public class KruemelBot extends ConfigManager {
 
         }
 
-        
+
     }
 
 }
