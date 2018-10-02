@@ -4,7 +4,6 @@ import com.jagrosh.jdautilities.command.Command;
 import com.jagrosh.jdautilities.command.CommandClientBuilder;
 import com.jagrosh.jdautilities.commons.waiter.EventWaiter;
 import com.krumel.bot.commands.*;
-import club.minnced.discord.rpc.*;
 import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.EmbedBuilder;
 import net.dv8tion.jda.core.JDA;
@@ -14,7 +13,6 @@ import net.dv8tion.jda.core.events.Event;
 import net.dv8tion.jda.core.events.ReadyEvent;
 import net.dv8tion.jda.core.exceptions.RateLimitedException;
 import net.dv8tion.jda.core.hooks.EventListener;
-
 import javax.security.auth.login.LoginException;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -106,11 +104,12 @@ public class KruemelBot extends ConfigManager {
 
 
             //Register the Commands
-            client.addCommands(new CoinflipCMD(),
+            client.addCommands( new CoinflipCMD(),
                                 new DdosCMD(),
                                 new PingCMD(),
                                 new ShutdownCMD(),
                                 new InviteCMD());
+                                new RebootCMD();
 
             JDA jda = new JDABuilder(AccountType.BOT)
                     .setToken(ConfigManager.prop.getProperty("discord_token"))
