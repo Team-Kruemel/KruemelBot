@@ -5,7 +5,7 @@ import com.jagrosh.jdautilities.command.CommandClientBuilder;
 import com.jagrosh.jdautilities.commons.waiter.EventWaiter;
 import com.krumel.bot.commands.*;
 import net.dv8tion.jda.core.AccountType;
-import net.dv8tion.jda.core.EmbedBuilder;
+/* import net.dv8tion.jda.core.EmbedBuilder;*/
 import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.JDABuilder;
 import net.dv8tion.jda.core.entities.Game;
@@ -117,11 +117,7 @@ public class KruemelBot extends ConfigManager {
                     .addEventListener(waiter)
                     .addEventListener(client.build())
                     .addEventListener(new BotSetup())
-
                     .build();
-
-
-
 
         }
 
@@ -129,9 +125,9 @@ public class KruemelBot extends ConfigManager {
         @Override
         public void onEvent(Event event) {
 
+            /*
             final JDA jda = event.getJDA();
             final EmbedBuilder eb = new EmbedBuilder();
-            final String BOT_ICON = "https://images-ext-2.discordapp.net/external/BqE8OJBxDhvmpIg1m0Zyw1I80IiKYq4f-f1DYZEvYcY/https/cdn.discordapp.com/avatars/479025791565430799/ee42db71c3d19b411b6191e652c57814.png";
             final String BOT_URL = "https://github.com/Team-Kruemel/KruemelBot/";
             final String WELCOME_TITEL = "Welcome message";
             final String DESC = "The bot is now ready for usage!";
@@ -139,20 +135,20 @@ public class KruemelBot extends ConfigManager {
             final String SDEV_CHANNEL_ID = "467046869424406528";
             final String BOT_READY_MSG = "The Bot is now ready for usage";
             final String VER_INFO = "Version 0.1_debug (Unstable)";
-
+            */
             if (event instanceof ReadyEvent) {
 
                 // Print to the Log that the API is ready
                 System.out.println(SAPI_READY);
 
-                //Print a welcome message to the Dev Channel
-                eb.setAuthor(jda.getSelfUser().getName(), BOT_URL, BOT_ICON);
+                /*
+                Print a welcome message to the Dev Channel
+                eb.setAuthor(jda.getSelfUser().getName(), BOT_URL, jda.getSelfUser().getAvatarUrl());
                 eb.setTitle(WELCOME_TITEL);
                 eb.setDescription(DESC);
-
                 eb.setFooter(FOOTER_TEXT + jda.getSelfUser().getName(), jda.getSelfUser().getAvatarUrl());
                 jda.getTextChannelById(SDEV_CHANNEL_ID).sendMessage(eb.build()).queue();
-
+                */
             }
 
         }
