@@ -108,8 +108,12 @@ public class KruemelBot extends ConfigManager {
                                 new DdosCMD(),
                                 new PingCMD(),
                                 new ShutdownCMD(),
-                                new InviteCMD());
-                                new RebootCMD();
+                                new InviteCMD(),
+                                new RebootCMD(),
+                                new MemeCMD()
+
+                                            );
+
 
             JDA jda = new JDABuilder(AccountType.BOT)
                     .setToken(ConfigManager.prop.getProperty("discord_token"))
