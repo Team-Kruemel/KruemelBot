@@ -37,7 +37,6 @@ import java.io.File;
             this.name = "join";
             this.help = "Invitation-Link";
             this.guildOnly = false;
-            this.category = KruemelBot.BotSetup.AdminCMDs;
             this.aliases = new String[]{"join"};
         }
 
