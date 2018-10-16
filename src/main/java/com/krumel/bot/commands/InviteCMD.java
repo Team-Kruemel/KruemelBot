@@ -42,7 +42,7 @@ import java.io.File;
 
         @Override
         protected void execute(CommandEvent event) {
-            ClassLoader ClassLoader = getClass().getClassLoader(); //load the gif  Resource
+
             EmbedBuilder eb = new EmbedBuilder();
             final String SBOT_URL = "https://github.com/Team-Kruemel/KruemelBot/";
             final String Sinvite_TITLE = "Here is your invite-Link!";
