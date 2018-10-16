@@ -51,12 +51,6 @@ public class PingCMD extends Command {
         final String SFOOTER_TEXT = "Requested by " + event.getAuthor().getName();
         event.reply("Ping: ...", m -> {
             long ping = event.getMessage().getCreationTime().until(m.getCreationTime(), ChronoUnit.MILLIS);
-
-
-
-
-
-
         });
         final  String SDESC = "Ping: " + PINGMS + "ms | Websocket: " +  event.getJDA().getPing() + "ms";
 
