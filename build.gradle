@@ -27,6 +27,9 @@ dependencies {
 
     // add GSON
     compile 'com.google.code.gson:gson:2.8.5'
+    //add LavaPlayer for playing music
+
+    compile 'com.sedmelluq:lavaplayer:1.3.9'
 
     compile 'club.minnced:java-discord-rpc:2.0.0'
 
