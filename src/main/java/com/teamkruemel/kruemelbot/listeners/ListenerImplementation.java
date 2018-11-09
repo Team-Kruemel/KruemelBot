@@ -1,4 +1,4 @@
-package com.teamkruemel.kruemelbot.listener;
+package com.teamkruemel.kruemelbot.listeners;
 
 import com.teamkruemel.kruemelbot.util.Vars;
 import net.dv8tion.jda.core.JDA;

@@ -1,5 +1,6 @@
 package com.teamkruemel.kruemelbot.core;
 
+import com.teamkruemel.kruemelbot.listeners.MentionListener;
 import com.teamkruemel.kruemelbot.util.Vars;
 import com.teamkruemel.kruemelbot.util.YAMLManager;
 import net.dv8tion.jda.bot.sharding.DefaultShardManagerBuilder;
@@ -35,9 +36,9 @@ public class KruemelBot {
     public static void shardManager() throws LoginException {
 
         DefaultShardManagerBuilder shardBuilder = new DefaultShardManagerBuilder();
-        shardBuilder.setToken("")
-                    //.addEventListener(new MessageListener())
-                    .build();
+        shardBuilder.setToken("");
+        shardBuilder.addEventListeners(new MentionListener());
+        shardBuilder.build();
 
     }
 
