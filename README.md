@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/4b18a24ccec04c34839ffa7d50d5c915)](https://www.codacy.com/app/InterXellar/KruemelBot?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Team-Kruemel/KruemelBot&amp;utm_campaign=Badge_Grade)
 # KruemelBot
 A simple Discord Bot that is currently WIP.
 The following librariers were used:
