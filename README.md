@@ -7,12 +7,11 @@ The following librariers were used:
 *   [discord-api-command by JohnnyJayJay](https://github.com/JohnnyJayJay/discord-api-command "discord-api-command by JohnnyJayJay")
 *   [Simple-YAML by Carleslc](https://github.com/Carleslc/Simple-YAML "Simple-YAML by Carleslc")
 
-# Bug-Report
+## Bug-Report
 Please use the Issues Tracker to report bugs.
 
-# Discord Name
+## Discord Name
 If you have any questions you can contact us on Discord:
 
-* Xellar#9999
-
-* ZickZackHD#4834
+*   Xellar#9999
+*   ZickZackHD#4834
