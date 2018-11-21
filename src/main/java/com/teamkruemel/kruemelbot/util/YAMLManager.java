@@ -16,10 +16,12 @@ public class YAMLManager {
         ConfigurationSection createBotConfigSection = Vars.configFile.createSection("bot-config");
         createBotConfigSection.set("bot-token", "test");
         createBotConfigSection.set("bot-owner", "test");
+        createBotConfigSection.set("bot-prefix", "Set the prefix of the bot here");
 
         try {
 
             Vars.configFile.save();
+            System.exit(1);
 
         } catch (IOException exc) {
 

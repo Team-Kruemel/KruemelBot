@@ -17,6 +17,12 @@ public class MessageEventListener extends ListenerAdapter {
 
         }
 
+        if (event.getMessage().getContentRaw().equals(event.getAuthor().isBot())) {
+
+
+
+        }
+
     }
 
 }
